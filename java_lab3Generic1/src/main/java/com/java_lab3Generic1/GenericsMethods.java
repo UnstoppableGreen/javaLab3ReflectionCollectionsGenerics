@@ -14,7 +14,7 @@ public class GenericsMethods {
 		g2.set("Hello World");
 		
 		boolean isEqual = GenericsMethods.<String>isEqual(g1, g2);
-		isEqual = GenericsMethods.isEqual(g1, g2);
+		System.out.println(isEqual = GenericsMethods.isEqual(g1, g2));
 	}
 
 }

@@ -15,9 +15,11 @@ public class GenericsType<T> {
 	public static void main(String args[]){
 		GenericsType<String> type = new GenericsType<>();
 		type.set("Hello World!"); 
-		
+		System.out.println(type.get());
 		GenericsType type1 = new GenericsType(); 
-		type1.set("Hello World!"); 
-		type1.set(10); 
+		type1.set("world");
+		System.out.println(type1.get());
+		type1.set(10);
+		System.out.println(type1.get());
 	}
 }
