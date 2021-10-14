@@ -1,5 +1,6 @@
 package lab1;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -14,6 +15,8 @@ public class info {
 		getConstructors(c);
 		//вывести все методы
 		getMethods(c);
+		//вывести все аннотации
+		getAnnotations(c);
 		//вывести все интерфейсы
 		getInterfaces(c);
 		//вывести родителя
@@ -23,7 +26,7 @@ public class info {
 			getInfoClass(c.getSuperclass());
 		}
 	}
-	
+
 	public void methodClassToString(Object o) {
 		Method method;
 		Class cls = o.getClass();
@@ -85,4 +88,17 @@ public class info {
 	            System.out.println(inter.toString());
         }
 	}
+	void getAnnotations(Class c) {
+		
+		Method[] methods = c.getDeclaredMethods();
+		if (methods.length != 0) {
+			System.out.println("==ANNOTATIONS==");
+			for (Method method : methods) { 
+	            System.out.println(method.toString());
+	            System.out.println(method.getDeclaredAnnotations().toString());
+			}
+        }
+	}
+
 }
+
